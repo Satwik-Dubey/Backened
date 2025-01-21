@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="/public/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <h3>Create User</h3>
+    <div>
+        <div>
+            <% if(users.length > 0) { %>
+                <% users.forEach((user) => { %>
+                    <div class="user-card">
+                        <div class="image">
+                            <img src="<%= user.image %>" alt="<%= user.name %>" />
+                        </div>
+                        <h3><%= user.name %></h3>
+                        <h3><%= user.email %></h3>
+                        <div class="actions">
+                            <a href="/edit/<%= user._id %>" class="edit-button">Edit</a>
+                            <a href="/delete/<%= user._id %>" class="delete-button">Delete</a>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <h3>No users found</h3>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

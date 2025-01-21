@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div>
+        <form action="/update/<%= user._id %>" method="patch" class="border-2 border-black">
+            <input name="name" type="text" placeholder="enter name" value="<%= user.name %>">
+            <input name="email" type="email" placeholder="enter email" value="<%= user.email %>">
+            <input name="image" type="text" placeholder="enter image url" value="<%= user.image %>">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+</body>
+</html>
