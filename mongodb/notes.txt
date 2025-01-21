@@ -1,0 +1,23 @@
+Database
+Tyoes of DBS -> SQL | NOSQL
+  
+in nosql data is stored in objects
+
+
+NOSQL -> mongoDB
+
+in backened there are two server application server and database server
+application server is node server we use and application servr means mongoDB
+
+application server means doing all work like login,signup,routes everything except database
+
+Terminologies
+
+database->collections of data->document
+
+Code level
+
+-> mongoose.connect->vreate database
+->model create -> collection banta h   (like user model se user collection banega)
+CREATE CODE  -> document
+
