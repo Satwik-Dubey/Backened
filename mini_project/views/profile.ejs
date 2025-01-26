@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>    
+    <h1>hello</h1>
+    <div>
+        <a href="/logout"> Click here for Logout</a>
+        <h3> Hello <%= user.username  %></h3>
+        <h5> u can create a new post</h5>
+        <form action="/post" method="post">
+            <textarea  placeholder="whats on my mind" class=" border-2 resize-none" name="content"></textarea>
+            <input type="submit" value="create new post" >
+        </form>
+        <% if(user.posts.length > 0) { %>
+            <% user.posts.reverse().forEach((post) => { %>
+                <div class="posts">
+                    <h3>Your post</h3>
+                    <div class="border-2 border-black">
+                        <h4>@<%= user.username %></h4>
+                        <p><%= post.content %></p>
+                        <div>
+                            <a href="/like/<%= post._id %>">Like</a>
+                            <a href="/edit/<%= post._id %>">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <h4>You haven't posted anything yet</h4>
+        <% } %>
+    </div>
+</body>
+</html>
+
